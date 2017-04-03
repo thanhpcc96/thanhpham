@@ -1,0 +1,9 @@
+const Sequelize= require("sequelize");
+const path=require('path');
+const DB_URI='';
+const sequelize= new  Sequelize(DB_URI);
+const User=sequelize.import(path.join(__dirname,'user.js'));
+const db={};
+db.User=User;
+db.sequelize= sequelize;
+module.exports=db;
